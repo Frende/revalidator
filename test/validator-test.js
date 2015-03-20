@@ -715,6 +715,20 @@ vows.describe('revalidator', {
           },
           "return an object with `valid` set to false": assertInvalid
         },
+        "is empty string": {
+          "with <treatEmptyStringAsInteger> option default": {
+            topic: function(schema){
+              return revalidator.validate({answer: ""}, schema, {cast: true});
+            },
+            "return an object with `answer` set to false": assertInvalid
+          },
+          "with <treatEmptyStringAsInteger> option true": {
+            topic: function(schema){
+              return revalidator.validate({answer: ""}, schema, {cast: true, treatEmptyStringAsInteger: true});
+            },
+            "return an object with `answer` set to true": assertValid
+          }
+        },
         "is casted to integer": {
           topic: function (schema) {
             var object = { answer: "42" };
