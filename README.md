@@ -75,6 +75,7 @@ This will return with a value indicating if the `obj` conforms to the `schema`. 
 * __validateFormatExtensions__: When `validateFormats` is _true_ also validate formats defined in `validate.formatExtensions` (_default true_)
 * __additionalProperties__: When `additionalProperties` is _true_ allow additional unvisited properties on the object. (_default true_)
 * __cast__: Enforce casting of some types (for integers/numbers are only supported) when it's possible, e.g. `"42" => 42`, but `"forty2" => "forty2"` for the `integer` type.
+* __treatEmptyStringAsInteger__: When `cast` is _true_ this property, when _true_, will treat empty strings as `integer` with value 0. Default _false_.
 
 ### Schema
 For a property an `value` is that which is given as input for validation where as an `expected value` is the value of the below fields
